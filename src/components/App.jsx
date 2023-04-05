@@ -1,16 +1,33 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template Test Test
-    </div>
-  );
-};
+import React from 'react';
+import { GlobalStyle } from './GlobalStyle';
+
+import Section from './Section/Section';
+import Form from './Form/Form';
+import Filter from './Filter/Filter';
+import ContactsList from './ContactsList/ContactsList';
+
+
+export function App () {
+     return (
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          fontSize: 16,
+          color: '#010101',
+        }}
+      >
+        <Section title="Phonebook">
+          <Form />
+        </Section>
+        <Section title="Contacts">
+          <Filter />
+          <ContactsList />
+        </Section>
+
+        <GlobalStyle />
+      </div>
+    );
+  }
+
+  export default App;
