@@ -8,10 +8,6 @@ import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
 import { store } from 'redux/store';
 
-// import { persistor, store } from 'redux/store';
-// import { PersistGate } from 'redux-persist/integration/react';
-
-
 const theme = {
   colors: {
     black: '#2a2a2a',
@@ -34,12 +30,10 @@ const theme = {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      <ThemeProvider theme={theme}>
-        <Provider store={store}>
-          {/* <PersistGate loading={null} persistor={persistor}> */}
-          <App />
-          {/* </PersistGate> */}
-        </Provider>
-      </ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </ThemeProvider>
   </React.StrictMode>
 );
