@@ -9,6 +9,7 @@ import Section from './Section/Section';
 import Form from './Form/Form';
 import Filter from './Filter/Filter';
 import ContactsList from './ContactsList/ContactsList';
+import Loader from './Loader/Loader';
 
 export function App() {
   const dispatch = useDispatch();
@@ -33,6 +34,8 @@ export function App() {
       </Section>
       <Section title="Contacts">
         <Filter />
+        {isLoading && !error && <Loader />}
+        {error && <p>{error}</p>}
         <ContactsList />
       </Section>
 
