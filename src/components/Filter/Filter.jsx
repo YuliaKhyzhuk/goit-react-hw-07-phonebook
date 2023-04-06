@@ -3,7 +3,7 @@ import React from 'react';
 import { FilterContainer, FilterInput } from './Filter.styled';
 
 import { useDispatch } from 'react-redux';
-import { setFilter } from 'redux/filterSlice';
+import { filterContacts } from 'redux/filterSlice';
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ const Filter = () => {
   return (
     <FilterContainer>
     Find contacts by name
-    <FilterInput type="text"  onChange={event => dispatch(setFilter(event.target.value))} />
+    <FilterInput type="text"  onChange={event => dispatch(filterContacts(event.target.value))} />
   </FilterContainer>
   )
   };
